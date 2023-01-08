@@ -6,7 +6,7 @@ import subprocess
 # user settings
 SLEEP_INTERVAL_SECONDS = 15
 # percentage the cpu has to reach for the PC to inhibit (stay on)
-inhibit_percentage = 2
+inhibit_percentage = 80
 # locks the screen when the PC normally goes to sleep. 
 # If it is set to True, it directly inhibits the PC. If set to False, it will set the inactivity time until going to sleep to never. 
 # If the PC is set to enter the lockscreen (setting in screensaver settings menu) it will still do that if keep_screen_on is False. 
