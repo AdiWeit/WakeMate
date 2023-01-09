@@ -9,11 +9,16 @@ The only option which seems to not be specifically for cinnamon users is to have
 
 ## installation: 
 1. download the main.py file or the whole repository
+
 2. open the file with a text editor and edit the following: 
+
 2.1 change the username from "adi" to your username in all lines "adi" is mentioned
+
 2.2 change the uid (user id?) from "1000" to your id (possible ids can be found as foldernames at "/run/user")
+
 2.3 edit the settings if you'd like to (can be found below the ```user settings``` comment)
-4. set up systemctl (daemon)
+
+3. set up systemctl (daemon)
 
 3.1 create a file with the service name and ".service" in the end. Open the file with a text editor and write the following (and save it): 
 ```
