@@ -9,9 +9,12 @@ The only option which seems to not be specifically for cinnamon users is to have
 
 ## installation: 
 1. download the main.py file or the whole repository
-2. set up systemctl (daemon)
+2. open the file with a text editor and edit the following: 
+2.1 change the username from "adi" to your username in all lines "adi" is mentioned
+2.2 change the uid (user id?) from "1000" to your id (possible ids can be found as foldernames at "/run/user")
+4. set up systemctl (daemon)
 
-2.1 create a file with the service name and ".service" in the end. In the file, write the following (and save it): 
+3.1 create a file with the service name and ".service" in the end. Open the file with a text editor and write the following (and save it): 
 ```
 [Unit]
 Description=<<put service name here>> daemon
@@ -24,13 +27,13 @@ RestartSec=10min
 [Install]
 WantedBy=default.target
 ```
-2.2 open the terminal and 
+3.2 open the terminal and 
 
-2.3 Reload the system manager configuration: ```sudo systemctl daemon-reload```
+3.3 Reload the system manager configuration: ```sudo systemctl daemon-reload```
 
-2.4 Enable the service to start on boot: ```systemctl enable --now <<put service name here>>.service```
+3.4 Enable the service to start on boot: ```systemctl enable --now <<put service name here>>.service```
 
-2.5 Start the service: ```sudo systemctl start <<put service name here>>.service```
+3.5 Start the service: ```sudo systemctl start <<put service name here>>.service```
 
 The script should now be running as a service and will start automatically on boot. 
 
