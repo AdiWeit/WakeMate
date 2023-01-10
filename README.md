@@ -1,11 +1,12 @@
 # sleep-inhibitor-on-high-cpu-utilization
 This python script checks your PC's cpu utilization percentage and inhibits the PC if the in the script specified percentage ("inhibit_percentage") is passed. 
+Moreover, it can inhibit the PC if a specified application has too (count can be specified) many open windows or a window with a specified title. 
 
 You can also change the inhibit behavior a little bit in the script ("user settings", beginning in line 6). 
 
-The script is written for Linux Mint, but it might work for other cinnamon users as well. 
+Because the script is written for Linux Mint cinnamon, most of the settings regarding the inhibiting settings are only realizable with cinnamon specific commands, although they might be changable for other distors. 
 
-The only option which seems to not be specifically for cinnamon users is to have a black screen and the screen locked when inhibiting ("lock_screen = True").
+The only option which seems to not involve cinnamon commands is to have a black screen and the screen locked when inhibiting ("lock_screen = True").
 
 ## installation: 
 1. download the main.py file or the whole repository
@@ -50,5 +51,5 @@ stop the service with ```sudo systemctl stop <<put service name here>>.service``
 To see the logs of the currently running service, you can type ```journalctl -u <<put service name here>>.service -b`
 
 
-Most of it is cinnamon specific because I had to type in the path to the power settings I had to change. If you find you a better way to change the settings feel free to open up an issue or make a pull request!
+Like I said, most of it is cinnamon specific because I had to type in the path to the power settings I had to change via command. If you find a better way to change the settings or found a path/command for other distors, feel free to open up an issue or make a pull request!
 If you have issues or a feature request, you can of course write that in an issue as well. 
