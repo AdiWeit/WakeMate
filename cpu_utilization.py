@@ -15,8 +15,7 @@ def cpu_working_hard(time_checking, inhibit_percentage):
     time_inactive = get_time_inactive()
   return usage > inhibit_percentage
 
-# after the time_inactive time (in mili sec.) the PC would normally go to sleep
-time_inactive = {"screen": {"decharging": 300, "charging": 300}, "sleep": {"decharging": 600, "charging": 600}}
+time_inactive = settings.default_time_inactive
 # get the current time_inactive (power) settings
 def get_time_inactive():
   return  {
