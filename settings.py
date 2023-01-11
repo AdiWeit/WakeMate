@@ -10,10 +10,15 @@ inhibit_percentage = 80
 lock_screen = False
 # inhibits the black screen (lock_screen must be set to False)
 keep_screen_on = False
+# after the time_inactive time (in mili sec.) the PC would normally go to sleep. 
+# This is used to reset the setting to the user setting. 
+# The values entered here are the default values and will be updated if the settings are changed by the user. 
+default_time_inactive = {"screen": {"decharging": 300, "charging": 300}, "sleep": {"decharging": 600, "charging": 600}}
+
 # tell the programm in which window situations it should inhibit. 
 # In the example below you have "Telegram" as a porgram name (application name or class_group_name). 
 # the 2 behind the "count" means, that the PC will inhibit, if the application ("Telegram") has 2 or more windows open
 # the "Vorschau" behind "title" of the "Anki" application means, that the PC will inhibit, if a window named "Vorschau" of the application named "Anki" is open
 # to check out how your open windows (applications) are called, you can uncommennt print lines in the "windows_filter.py" file (the first print is the following: "print("new window:")")
 # info: the application title and the window title specified here only have to be part of the real title. 
-window_filter = {"Telegram": {"count": 2}, "Anki": {"title": "Vorschau"}, "Audacity": {"count": 1}, "Audio": {"title": "Audio-Rekorder"}}
+window_filter = {"Telegram": {"count": 2}, "Audacity": {"count": 1}, "Audio": {"title": "Audio-Rekorder"}, "cinnamon-session": {"title": "Sitzung"}}
