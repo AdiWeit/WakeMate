@@ -34,13 +34,19 @@ RestartSec=10min
 [Install]
 WantedBy=default.target
 ```
-3.2 open the terminal and 
+3.2.1 open the path ```/etc/systemd/system``` 
 
-3.3 Reload the system manager configuration: ```sudo systemctl daemon-reload```
+3.2.2 right click on a blank space and click ```open as system manager```. It will ask you for your password, so you have to enter it. 
 
-3.4 Enable the service to start on boot: ```systemctl enable --now <<put service name here>>.service```
+3.2.3 create a link to the service file you created (or copy paste it there).  It has to have the same name as the original file. 
 
-3.5 Start the service: ```sudo systemctl start <<put service name here>>.service```
+3.3 open the terminal and 
+
+3.4 Reload the system manager configuration: ```sudo systemctl daemon-reload```
+
+3.5 Enable the service to start on boot: ```systemctl enable --now <<put service name here>>.service```
+
+3.6 Start the service: ```sudo systemctl start <<put service name here>>.service```
 
 The script should now be running as a service and will start automatically on boot. 
 
