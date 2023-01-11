@@ -1,33 +1,33 @@
 # sleep-inhibitor-on-high-cpu-utilization
 This python script checks your PC's cpu utilization percentage and inhibits the PC if the in the script specified percentage ("inhibit_percentage") is passed. 
-Moreover, it can inhibit the PC if a specified application has too (count can be specified) many open windows or a window with a specified title. 
+Moreover, it can inhibit the PC if a specified application has too many (count can be specified) open windows or a window with a specified title is open. 
 
-You can also change the inhibit behavior a little bit in the script ("user settings", beginning in line 6). 
+You can also change the inhibit behavior a little bit in the script "settings.py"). 
 
-Because the script is written for Linux Mint cinnamon, most of the settings regarding the inhibiting settings are only realizable with cinnamon specific commands, although they might be changable for other distors. 
+Because the script is written for Linux Mint Cinnamon, most of the settings regarding the inhibiting are only realizable with Cinnamon specific commands, although they might be adaptable for other distors. 
 
-The only option which seems to not involve cinnamon commands is to have a black screen and the screen locked when inhibiting ("lock_screen = True").
+The only option which seems to not involve Cinnamon commands is to have a black screen and the screen locked when inhibiting ("lock_screen = True").
 
 ## installation: 
-1. download the main.py file or the whole repository
+1. download the whole repository (as a zip and unpack it)
 
-2. open the file with a text editor and edit the following: 
+2. open the files ```main.py```, ```cpu_utilization``` and ```mywake.py``` with a text or code editor and edit the following: 
 
 2.1 change the username from "adi" to your username in all lines "adi" is mentioned
 
-2.2 change the uid (user id?) from "1000" to your id (possible ids can be found as foldernames at "/run/user")
+2.2 change the uid (user id?) from "1000" to your id (possible ids can be found as foldernames at "/run/user") in the same lines
 
-2.3 edit the settings if you'd like to (can be found below the ```user settings``` comment)
+2.3 edit the settings or at least go over them (can be found in the file ```settings.py```)
 
 3. set up systemctl (daemon)
 
-3.1 create a file with the service name and ".service" in the end. Open the file with a text editor and write the following (and save it): 
+3.1 create a file with the service name and ".service" in the end. Open the file with a text/code editor and write the following (and save it): 
 ```
 [Unit]
 Description=<<put service name here>> daemon
 
 [Service]
-ExecStart= <<path to the file you downloaded (main.py) (including the file name, you can rename the file if you want, but remember to change the path accordingly!)>>
+ExecStart= <<path to the ```main.py``` file you downloaded (including the file name, you can rename the file if you want, but remember to change the path accordingly!)>>
 Restart=always
 RestartSec=10min
 
@@ -51,5 +51,5 @@ stop the service with ```sudo systemctl stop <<put service name here>>.service``
 To see the logs of the currently running service, you can type ```journalctl -u <<put service name here>>.service -b`
 
 
-Like I said, most of it is cinnamon specific because I had to type in the path to the power settings I had to change via command. If you find a better way to change the settings or found a path/command for other distors, feel free to open up an issue or make a pull request!
+Like I said, most of it is Cinnamon specific because I had to type in the path to the power settings I have to change via commands. If you find a better way to change the settings or found a path/command for other distors, feel free to open up an issue or make a pull request!
 If you have issues or a feature request, you can of course write that in an issue as well. 
