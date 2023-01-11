@@ -1,4 +1,4 @@
-# sleep-inhibitor-on-high-cpu-utilization
+# sleep-inhibitor-on-high-cpu-utilization-or-specified-window-open 
 This python script checks your PC's cpu utilization percentage and inhibits the PC if the in the script specified percentage ("inhibit_percentage") is passed. 
 Moreover, it can inhibit the PC if a specified application has too many (count can be specified) open windows or a window with a specified title is open. 
 
