@@ -11,8 +11,8 @@ windows_filter_subprocess = subprocess.Popen(
   # command to make this work when running in the background with systemctl 
   # "adi": user name 
   # "1000": uid (user id?, possible ids can be found as foldernames at "/run/user"))
-  'export DISPLAY=:0; sudo -H -u adi DISPLAY=:0 DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus '
-    + 'python3 /home/adi/Downloads/MprisWake-main/windows_filter.py', 
+  'sudo -u adi env DISPLAY=:1 python3 /home/adi/Downloads/MprisWake-main/windows_filter.py'
+    + ' /home/adi/Downloads/MprisWake-main/windows_filter.py',
     shell=True
 )
 # keep this script running
