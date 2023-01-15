@@ -47,9 +47,11 @@ def update():
         mywake.change_inhibit(False)
   except KeyboardInterrupt:
     print("exit via key press")
-thread = threading.Thread(target=update)
-thread.daemon = True
-thread.start()
+# thread needed because mywake has to be imported but imports this script
+def start_checking():
+  thread = threading.Thread(target=update)
+  thread.daemon = True
+  thread.start()
 def get_settings_subprocess(setting):
   return int(subprocess.run(
   # command to make this work when running in the background with systemctl 
