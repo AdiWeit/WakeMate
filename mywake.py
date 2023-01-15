@@ -1,8 +1,8 @@
+#!/usr/bin/env python3
 import settings
 import cpu_utilization
 import subprocess
 import os
-#!/usr/bin/env python3
 inhibiting = {}
 def inhibit():
   global time_inactive
