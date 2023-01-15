@@ -30,7 +30,7 @@ The only option which seems to not involve Cinnamon commands is to have a black 
 
 3.2.2 right click on a blank space and click `open as system manager`. It will ask you for your password, so you have to enter it. 
 
-3.2.3 paste the [`WakeMate`](service file) you copied (or copy paste it there).  It has to have the same name as the original file. 
+3.2.3 paste the [`WakeMate.service`](service file) you copied (or copy paste it there).  It has to have the same name as the original file. 
 
 3.3 open the terminal and 
 
