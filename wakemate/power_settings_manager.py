@@ -46,11 +46,7 @@ def inhibit():
     time_inactive = get_time_inactive()
   # inhibit PC
   if settings.lock_screen:
-    # os.system('sudo systemd-inhibit --why "{}" --what "sleep" script'.format("cpu level, open window(s) or audio playing"))
     os.system('sudo systemd-inhibit --why "MyWake" sleep ' + str(settings.SLEEP_INTERVAL_SECONDS + 1))
-    # print("calls subprocess with shell")
-    # subprocess.run('sudo -S systemd-inhibit --why "MyWake" sleep ' + str(settings.SLEEP_INTERVAL_SECONDS + 1), shell=True)
-    # os.system('python3 /home/adi/Downloads/MprisWake-main/mywake/inhibit.py')
   else:
     # sets the inactivity time until the PC goes to sleep when running on battery (not connected to charging cable) to never (0)
     write_setting('sleep-inactive-battery-timeout "0"')
