@@ -2,10 +2,10 @@
 Description=MprisWake daemon
 
 [Service]
-ExecStartPre=/bin/sleep 11
 ExecStart=/home/adi/Downloads/MprisWake-main/main.py
 Restart=always
 RestartSec=10min
+Environment="DISPLAY=:0"
 
 [Install]
 WantedBy=default.target
