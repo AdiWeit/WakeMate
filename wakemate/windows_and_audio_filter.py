@@ -56,7 +56,6 @@ def windows_and_audio_checker(callback):
       try:
           output = subprocess.run(
             # 1000: uid (user id?)
-            # sudo -u adi 
               "env XDG_RUNTIME_DIR=/run/user/1000 pactl list sink-inputs", shell=True, capture_output=True, text=True)
           outputs = str(output).split(" #")
       except Exception as err:
@@ -78,7 +77,6 @@ def windows_and_audio_checker(callback):
                                   callback(
                                       {"type": "audio playing", "state": True})
                                   raise Exception("end loop")
-
       except:
           pass
       else:
@@ -86,8 +84,6 @@ def windows_and_audio_checker(callback):
           pass
 
       time.sleep(settings.SLEEP_INTERVAL_SECONDS)
-
-
 
 def start_checking(callback):
     thread = threading.Thread(
