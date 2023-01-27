@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 from rich import print
-import mywake
+import wakemate
 
 
 def main():
-    mywake.start_checking()
+    wakemate.start_checking()
 
 if __name__ == '__main__':
     main()
