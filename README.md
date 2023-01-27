@@ -14,11 +14,13 @@ The only option which seems to not involve Cinnamon commands is to have a black 
 ## installation: 
 1. download the whole repository (as a zip and unpack it)
 
-2. open the file [`WakeMate.service`](WakeMate.service) with a text or code editor and enter your path to the main.py (you will find my path entered already, but you will have to edit it) 
+2. open the file [`WakeMate.service`](WakeMate.service) with a text or code editor and enter your path to the [`main.py`](`wakemate/main.py`) (you will find my path entered already, but you will have to edit it) 
 
-2.1 open the file [`windows_and_audio_filter.py`](wakemate/windows_and_audio_filter.py) (located in the subfolder [`makemate`](wakemate/)) with a text or code editor and replace the 1000 with your uid (user id?) (possible ids can be found as foldernames at "/run/user/") in the lines mentioned. 
+2.1 open the file [`windows_and_audio_filter.py`](wakemate/windows_and_audio_filter.py) (located in the subfolder [`makemate`](wakemate/)) with a text or code editor and replace the 1000 with your uid (user id?) (possible ids can be found as foldernames at `/run/user/`) in the lines mentioned. 
 
-2.2 edit the settings or at least go through them (can be found in the file [`wakemate/settings.py`](settings.py) located in the subfolder [`makemate`](wakemate/))
+2.2 edit the settings or at least go through them (can be found in the file [`settings.py`](wakemate/settings.py) located in the subfolder [`makemate`](wakemate/))
+
+You may need to allow the [`main.py`](`wakemate/main.py`) script to be executed. 
 
 3. set up systemctl (daemon)
 
@@ -26,18 +28,20 @@ The only option which seems to not involve Cinnamon commands is to have a black 
 
 3.2.1 open the path `/etc/systemd/user` 
 
-3.2.2 right click on a blank space and click `open as system manager`. It will ask you for your password, so you have to enter it. 
+3.2.2 right click on a blank space and click `open as system manager`. It will ask you for the (root) password, so you have to enter it. 
 
-3.2.3 paste the [`WakeMate.service`](service file) you copied. It has to have the same name as the original file. 
+3.2.3 paste the [`service file`](WakeMate.service) you copied. It has to have the same name as the original file. 
 
 3.3 open the terminal and 
 
 3.4 Reload the system manager configuration: `systemctl --user daemon-reload`
 
-3.5 Enable the service to start on boot: `systemctl enable --user --now WakeMate.servicee`
+3.5 Enable the service to start on boot: `systemctl enable --user --now WakeMate.service`
 
-3.6 Start the service: `systemctl restart --user --now WakeMate.service
-`
+3.6 Start the service: `systemctl start --user --now WakeMate.service`
+
+To restart the service, use `systemctl restart --user --now WakeMate.service`
+
 4. run "sudo visudo" in the terminal. It will ask for the password, so enter it.
 
 note that the following key combinations might vary due to different editors that might be run. The key combinations should work for GNU nano. 
@@ -51,18 +55,22 @@ note that the following key combinations might vary due to different editors tha
 4.3 press "y" (english: yes, depends on the language) to save the changes
   
 4.4 press enter to exit the editor
+
+You may need to install rich (python library): `pip install rich`
  
 
 The script should now be running as a service and will start automatically on boot. 
 
 You can check the status of the service with `systemctl status --user WakeMate.service` and 
 
-stop the service with `sudo systemctl stop WakeMate.service`.
+stop the service with `systemctl --user stop WakeMate.service`.
 
-To see the logs created of the currently running service, you can type `journalctl -u WakeMate.service -b`
+If it is stuck (doesn't finish the process) enabling or starting the process, you can try disabling the script (`systemctl --user stop WakeMate.service`) and following the steps from 3.4 to 3.6 again.
+
+To see the logs created of the currently running service, you can type `journalctl --user -u WakeMate.service -b`
 
 
 Like I said, most of it is Cinnamon specific because I had to type in the path to the power settings I have to change via commands. If you find a better way to change the settings or found a path/command for other distors, feel free to open up an issue or make a pull request!
 If you have issues or a feature request, you can of course write that in an issue as well. 
 
-Special thanks to [Nicoali Weitkemper](https://github.com/NicoWeio) for contributing to this project, espacially helping me with the restructuring of the architecture. 
+Special thanks to [Nicolai Weitkemper](https://github.com/NicoWeio) for contributing to this project, espacially helping me with the restructuring of the architecture. 
