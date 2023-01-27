@@ -46,7 +46,7 @@ To restart the service, use `systemctl restart --user --now WakeMate.service`
 
 note that the following key combinations might vary due to different editors that might be run. The key combinations should work for GNU nano. 
 
-4.1 add the line "`username here` ALL=(ALL) NOPASSWD: /usr/bin/systemd-inhibit"
+4.1 add the line "`username here` ALL=(ALL) NOPASSWD: /usr/bin/systemd-inhibit" (when you open the file manager (in nemo at least) and click on "personal", your username is the last bit of the path to the folder you are in)
   
   This line should make commands influencing systemd-inhibit (which is used for inhibiting the PC if `lock_screen = True` in the settings file) executable  without entering the sudo password for the entered user
   
