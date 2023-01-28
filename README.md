@@ -42,7 +42,9 @@ You may need to allow the [`main.py`](`wakemate/main.py`) script to be executed.
 
 To restart the service, use `systemctl restart --user --now WakeMate.service`
 
-4. run "sudo visudo" in the terminal. It will ask for the password, so enter it.
+You only have to do 4. if you want to set `lock_screen` to true. 
+
+4. run `sudo visudo` in the terminal. It will ask for the password, so enter it.
 
 note that the following key combinations might vary due to different editors that might be run. The key combinations should work for GNU nano. 
 
