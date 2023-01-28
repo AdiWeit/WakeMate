@@ -63,12 +63,11 @@ The script should now be running as a service and will start automatically on bo
 
 You can check the status of the service with `systemctl status --user WakeMate.service` and 
 
-stop the service with `systemctl --user stop WakeMate.service`.
+You can disable the service with `systemctl --user disable WakeMate.service`. This will stop the script and disable it, so it will not be started automatically after a reboot. If you want to enable it again (let it start on reboot), you have to type the command again (3.5)
 
-If it is stuck (doesn't finish the process) enabling or starting the process, you can try disabling the script (`systemctl --user stop WakeMate.service`) and following the steps from 3.4 to 3.6 again.
+If it is stuck (doesn't finish the process) enabling or starting the process, you can try disabling the script (with the command mentioned above) and following the steps from 3.4 to 3.6 again.
 
 To see the logs created of the currently running service, you can type `journalctl --user -u WakeMate.service -b`
-
 
 Like I said, most of it is Cinnamon specific because I had to type in the path to the power settings I have to change via commands. If you find a better way to change the settings or found a path/command for other distors, feel free to open up an issue or make a pull request!
 If you have issues or a feature request, you can of course write that in an issue as well. 
