@@ -7,7 +7,7 @@ inhibit_percentage = 80
 # If the PC is set to enter the lockscreen (setting in screensaver settings menu) it will still do that if keep_screen_on is False.
 # Setting it to True may be necessary if you are not running Cinnamon. Otherwise, you would have to search for other commands to edit the power settings on your system.
 # If you find other commands that work for your system, it would be great if you would open a pull request so it could be integrated for everyone!
-lock_screen = False
+lock_screen = True
 # inhibits the black screen (lock_screen must be set to False)
 keep_screen_on = False
 # after the time_inactive time (in mili sec.) the PC would normally go to sleep.
