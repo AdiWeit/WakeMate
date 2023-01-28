@@ -12,7 +12,7 @@ Because the script is written for Linux Mint Cinnamon, most of the settings rega
 The only option which seems to not involve Cinnamon commands is to have a black screen and the screen locked (at least on my PC) when inhibiting (`lock_screen = True`).
 
 ## installation: 
-1. download the whole repository (as a zip and unpack it)
+1. download the whole repository (as a zip and unpack it) (click on `code` and `download zip`)
 
 2. open the file [`WakeMate.service`](WakeMate.service) with a text or code editor and enter your path to the [`main.py`](`wakemate/main.py`) (you will find my path entered already, but you will have to edit it) 
 
